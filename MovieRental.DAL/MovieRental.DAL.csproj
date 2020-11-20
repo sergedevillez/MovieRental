@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="C:\Users\serge\source\repos\DemoDAL\ADOLibrary\ADOLibrary.csproj" />
   </ItemGroup>
 
 </Project>
