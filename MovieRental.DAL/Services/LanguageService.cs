@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Language Convert(SqlDataReader reader)
         {
             return new Language(
-                (int)reader["Id"],
+                (int)reader["LanguageId"],
                 reader["Name"].ToString()
             );
         }
@@ -33,7 +33,7 @@ namespace MovieRental.DAL.Services
         public override Language Get(int key)
         {
             Command cmd = new Command("GetLanguage", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("LanguageId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -47,7 +47,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Language entity)
         {
             Command cmd = new Command("UpdateLanguage", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("LanguageId", entity.id);
             cmd.AddParameter("Name", entity.name);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
@@ -56,7 +56,7 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteLanguage", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("LanguageId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }

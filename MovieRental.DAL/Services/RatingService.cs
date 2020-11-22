@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Rating Convert(SqlDataReader reader)
         {
             return new Rating(
-                (int)reader["Id"],
+                (int)reader["RatingId"],
                 reader["Rating"].ToString()
             );
         }
@@ -33,7 +33,7 @@ namespace MovieRental.DAL.Services
         public override Rating Get(int key)
         {
             Command cmd = new Command("GetRating", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("RatingId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -47,7 +47,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Rating entity)
         {
             Command cmd = new Command("UpdateRating", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("RatingId", entity.id);
             cmd.AddParameter("Rating", entity.rating);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
@@ -56,7 +56,7 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteRating", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("RatingId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }

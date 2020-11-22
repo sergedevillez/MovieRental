@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Actor Convert(SqlDataReader reader)
         {
             return new Actor(
-                (int)reader["Id"],
+                (int)reader["ActorId"],
                 reader["FirstName"].ToString(),
                 reader["LastName"].ToString()
             );
@@ -35,7 +35,7 @@ namespace MovieRental.DAL.Services
         public override Actor Get(int key)
         {
             Command cmd = new Command("GetActor", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("ActorId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -49,7 +49,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Actor entity)
         {
             Command cmd = new Command("UpdateActor", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("ActorId", entity.id);
             cmd.AddParameter("LastName", entity.firstName);
             cmd.AddParameter("FirstName", entity.lastName);
 
@@ -59,11 +59,19 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteActor", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("ActorId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }
 
-        
+        //Add a film to "this" actor
+        public bool AddFilmToActor(int keyActor, int keyFilm)
+        {
+            Command cmd = new Command("AddFilmToActor", true);
+            cmd.AddParameter("ActorId", keyActor);
+            cmd.AddParameter("FilmId", keyFilm);
+
+            return Connection.ExecuteNonQuery(cmd) == 1;
+        }
     }
 }

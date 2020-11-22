@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Film Convert(SqlDataReader reader)
         {
             return new Film(
-                (int)reader["Id"],
+                (int)reader["FilmId"],
                 reader["Title"].ToString(), 
                 reader["Description"].ToString(),
                 (int)reader["ReleaseYear"], 
@@ -49,7 +49,7 @@ namespace MovieRental.DAL.Services
         public override Film Get(int key)
         {
             Command cmd = new Command("GetFilm", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("FilmId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -63,7 +63,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Film entity)
         {
             Command cmd = new Command("UpdateFilm", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("FilmId", entity.id);
             cmd.AddParameter("Title", entity.title);
             cmd.AddParameter("Description", entity.description);
             cmd.AddParameter("ReleaseYear", entity.releaseYear);
@@ -80,7 +80,28 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteFilm", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("FilmId", key);
+
+            return Connection.ExecuteNonQuery(cmd) == 1;
+        }
+
+        //Add an actor to "this" movie
+        public bool AddActorToFilm(int keyFilm, int keyActor)
+        {
+            Command cmd = new Command("AddActorToFilm", true);
+            cmd.AddParameter("FilmId", keyFilm);
+            cmd.AddParameter("ActorId", keyActor);
+
+            return Connection.ExecuteNonQuery(cmd) == 1;
+        }
+
+        //Add a category to "this" film
+        //They are no "add film to category". TODO :  To modify or not ?
+        public bool AddCategoryToFilm(int keyFilm, int keyCategory)
+        {
+            Command cmd = new Command("AddCategoryToFilm", true);
+            cmd.AddParameter("FilmId", keyFilm);
+            cmd.AddParameter("ActorId", keyCategory);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }

@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Category Convert(SqlDataReader reader)
         {
             return new Category(
-                (int)reader["Id"],
+                (int)reader["CategoryId"],
                 reader["Name"].ToString()
             );
         }
@@ -33,7 +33,7 @@ namespace MovieRental.DAL.Services
         public override Category Get(int key)
         {
             Command cmd = new Command("GetCatgory", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("VategoryId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -47,7 +47,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Category entity)
         {
             Command cmd = new Command("UpdateCategory", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("CategoryId", entity.id);
             cmd.AddParameter("Name", entity.name);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
@@ -56,7 +56,7 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteCategory", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("CategoryId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }

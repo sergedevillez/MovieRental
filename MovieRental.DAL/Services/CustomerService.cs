@@ -13,7 +13,7 @@ namespace MovieRental.DAL.Services
         private Customer Convert(SqlDataReader reader)
         {
             return new Customer(
-                (int)reader["Id"],
+                (int)reader["CustomerId"],
                 reader["FirstName"].ToString(),
                 reader["LastName"].ToString(),
                 reader["Email"].ToString(),
@@ -39,7 +39,7 @@ namespace MovieRental.DAL.Services
         public override Customer Get(int key)
         {
             Command cmd = new Command("GetCustomer", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("CustomerId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }
@@ -53,7 +53,7 @@ namespace MovieRental.DAL.Services
         public override bool Update(Customer entity)
         {
             Command cmd = new Command("UpdateCustomer", true);
-            cmd.AddParameter("Id", entity.id);
+            cmd.AddParameter("CustomerId", entity.id);
             cmd.AddParameter("FirstName", entity.firstName);
             cmd.AddParameter("LastName", entity.lastName);
             cmd.AddParameter("Email", entity.email);
@@ -65,9 +65,10 @@ namespace MovieRental.DAL.Services
         public override bool Delete(int key)
         {
             Command cmd = new Command("DeleteCustomer", true);
-            cmd.AddParameter("Id", key);
+            cmd.AddParameter("CustomerId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }
+
     }
 }
