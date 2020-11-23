@@ -19,7 +19,7 @@ namespace MovieRental.DAL.Services
                 (int)reader["ReleaseYear"], 
                 (int)reader["LanguageId"], 
                 (int)reader["RentalDuration"], 
-                (double)reader["RentalPrice"], 
+                (double)reader["RentalPrice"], //Might have a problem going from decimal (5,2) to double
                 (int)reader["Lenght"], 
                 (double)reader["ReplacementCost"], 
                 (int)reader["RatingId"]

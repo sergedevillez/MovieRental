@@ -14,8 +14,8 @@ namespace MovieRental.DAL.Services
         protected Connection Connection { get; private set; }
         public ServiceBase(Connection connection)
         {
-            this.Connection = connection;
-            //connection = new Connection(@"stringConnection toward database");
+            //this.Connection = connection;
+            this.Connection = new Connection(@"Data Source=DESKTOP-PJ4VH9N;Initial Catalog=MovieRental;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         }
 
