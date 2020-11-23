@@ -11,6 +11,7 @@ namespace MovieRental.DAL.Models
         public string lastName { get; set; }
         public string email { get; set; }
         public string passwd { get; set; }
+        public string Token { set; get; }
 
         public Customer() { }
         public Customer(string firstName, string lastName, string email, string passwd)

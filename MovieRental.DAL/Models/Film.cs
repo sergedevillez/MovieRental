@@ -12,13 +12,13 @@ namespace MovieRental.DAL.Models
         public int? releaseYear { get; set; } //NULLABLE to add since value
         public int languageId { get; set; }
         public int rentalDuration { get; set; }
-        public double rentalPrice { get; set; }
+        public decimal rentalPrice { get; set; }
         public int? length { get; set; } //NULLABLE
-        public double replacementCost { get; set; }
+        public decimal replacementCost { get; set; }
         public int ratingId { get; set; }
 
         public Film() { }
-        public Film(string title, string description, int? releaseYear, int languageId, int rentalDuration, double rentalPrice, int? lenght, double replacementCost, int ratingId)
+        public Film(string title, string description, int? releaseYear, int languageId, int rentalDuration, decimal rentalPrice, int? lenght, decimal replacementCost, int ratingId)
         {
             this.title = title;
             this.description = description;
@@ -30,7 +30,7 @@ namespace MovieRental.DAL.Models
             this.replacementCost = replacementCost;
             this.ratingId = ratingId;
         }
-        internal Film(int id, string title, string description, int? releaseYear, int languageId, int rentalDuration, double rentalPrice, int? lenght, double replacementCost, int ratingId)
+        internal Film(int id, string title, string description, int? releaseYear, int languageId, int rentalDuration, decimal rentalPrice, int? lenght, decimal replacementCost, int ratingId)
             : this( title,  description, releaseYear,  languageId,  rentalDuration,  rentalPrice, lenght,  replacementCost, ratingId)
         {
             this.id = id;

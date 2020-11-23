@@ -34,7 +34,7 @@ namespace MovieRental.DAL.Services
         {
             return new Customer()
             {
-                id = (int)reader["Id"],
+                id = (int)reader["CustomerId"],
                 //Il est préférable de mettre (string) plutôt que .ToString 
                 //Car (reader["machin"] is DBNull) ? null : (string)reader["machin"]
                 firstName = (string)reader["FirstName"],
