@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[UpdateCurstomer]
+﻿CREATE PROCEDURE [dbo].[UpdateCustomer]
 	@CustomerId int,
 	@FirstName nvarchar(75),
 	@LastName nvarchar(75),

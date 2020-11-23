@@ -1,6 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[UpdateCurstomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[UpdateRental]
+	@RentalId int,
+	@RentalDate DateTime,
+	@CustomerId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Update Rental
+	Set RentalDate = @RentalDate,
+	CustomerId = @CustomerId
+	where RentalId = @RentalId
+end

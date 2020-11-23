@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MovieRental.Database", "MovieRental.Database\MovieRental.Database.sqlproj", "{BBF8372C-47C0-469E-9ADB-4D2B95CC9C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRental.API", "MovieRental.API\MovieRental.API.csproj", "{005680E5-EECB-4629-9EF9-91274BD3C250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRental.API", "MovieRental.API\MovieRental.API.csproj", "{005680E5-EECB-4629-9EF9-91274BD3C250}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADOLibrary", "C:\Users\serge\source\repos\DemoDAL\ADOLibrary\ADOLibrary.csproj", "{C73F1947-40AB-4BA0-89A1-8BF051449774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRental.DAL", "MovieRental.DAL\MovieRental.DAL.csproj", "{5DB308E0-1689-4E6E-BD9C-F3ED36FAC878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRental.DAL", "MovieRental.DAL\MovieRental.DAL.csproj", "{5DB308E0-1689-4E6E-BD9C-F3ED36FAC878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

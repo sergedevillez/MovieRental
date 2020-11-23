@@ -1,6 +1,7 @@
-﻿CREATE PROCEDURE [dbo].[GetCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[GetRating]
+	@RatingId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	SELECT RatingId, Rating from Rating
+	where RatingId = @RatingId
+end

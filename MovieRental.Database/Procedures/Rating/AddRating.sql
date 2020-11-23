@@ -1,6 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[AddCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[AddRating]
+	@Rating nvarchar(5)
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Insert into Rating (Rating)
+	output inserted.RatingId
+	Values (@Rating)
+end

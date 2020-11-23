@@ -1,6 +1,11 @@
-﻿CREATE PROCEDURE [dbo].[UpdateCurstomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[UpdateRentalDetail]
+	@RentalId int,
+	@FilmId int,
+	@RentalPrice decimal(5, 2)
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Update RentalDetail
+	Set RentalPrice = @RentalPrice
+	where RentalId = @RentalId and 
+	FilmId = @FilmId
+end

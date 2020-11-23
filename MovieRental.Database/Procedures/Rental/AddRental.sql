@@ -2,5 +2,7 @@
 	@RentalDate DateTime = SYSDATETIME,
 	@CustomerId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Insert into Rental (RentalDate , CustomerId) 
+	Values (@RentalDate, @CustomerId)
+end

@@ -1,6 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[GetAllCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[GetAllRental]
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	SELECT RentalId, RentalDate, CustomerId from Rental
+end

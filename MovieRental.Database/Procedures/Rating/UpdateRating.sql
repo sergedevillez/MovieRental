@@ -1,6 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[UpdateCurstomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[UpdateRating]
+	@RatingId int,
+	@Rating nvarchar(5)
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Update Rating
+	Set Rating = @Rating
+end

@@ -1,6 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[AddCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[AddLanguage]
+	@Name nvarchar(20)
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Insert into [Language] ([Name])
+	output inserted.LanguageId
+	Values (@Name)
+end

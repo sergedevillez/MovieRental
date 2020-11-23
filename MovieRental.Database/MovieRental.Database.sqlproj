@@ -61,6 +61,14 @@
     <Folder Include="Functions" />
     <Folder Include="Procedures" />
     <Folder Include="Views" />
+    <Folder Include="Procedures\RentalDetail" />
+    <Folder Include="Procedures\Actor" />
+    <Folder Include="Procedures\Category" />
+    <Folder Include="Procedures\Customer" />
+    <Folder Include="Procedures\Film" />
+    <Folder Include="Procedures\Language" />
+    <Folder Include="Procedures\Rating" />
+    <Folder Include="Procedures\Rental" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Film.sql" />
@@ -78,6 +86,49 @@
     <Build Include="Procedures\MVSP_CheckCustomer.sql" />
     <Build Include="Procedures\MVSP_RegisterCustomer.sql" />
     <Build Include="Views\V_Film.sql" />
+    <Build Include="Procedures\RentalDetail\AddRentalDetail.sql" />
+    <Build Include="Procedures\RentalDetail\DeleteRentalDetail.sql" />
+    <Build Include="Procedures\RentalDetail\GetAllRentalDetail.sql" />
+    <Build Include="Procedures\RentalDetail\GetRentalDetail.sql" />
+    <Build Include="Procedures\RentalDetail\UpdateRentalDetail.sql" />
+    <Build Include="Procedures\Actor\AddActor.sql" />
+    <Build Include="Procedures\Actor\AddFilmToActor.sql" />
+    <Build Include="Procedures\Actor\DeleteActor.sql" />
+    <Build Include="Procedures\Actor\GetActor.sql" />
+    <Build Include="Procedures\Actor\GetAllActor.sql" />
+    <Build Include="Procedures\Actor\UpdateActor.sql" />
+    <Build Include="Procedures\Category\AddCategory.sql" />
+    <Build Include="Procedures\Category\DeleteCategory.sql" />
+    <Build Include="Procedures\Category\GetAllCategory.sql" />
+    <Build Include="Procedures\Category\GetCategory.sql" />
+    <Build Include="Procedures\Category\UpdateCategory.sql" />
+    <Build Include="Procedures\Customer\AddCustomer.sql" />
+    <Build Include="Procedures\Customer\DeleteCustomer.sql" />
+    <Build Include="Procedures\Customer\GetAllCustomer.sql" />
+    <Build Include="Procedures\Customer\GetCustomer.sql" />
+    <Build Include="Procedures\Customer\UpdateCurstomer.sql" />
+    <Build Include="Procedures\Film\AddActorToFilm.sql" />
+    <Build Include="Procedures\Film\AddCategoryToFilm.sql" />
+    <Build Include="Procedures\Film\AddFilm.sql" />
+    <Build Include="Procedures\Film\DeleteFilm.sql" />
+    <Build Include="Procedures\Film\GetAllFilm.sql" />
+    <Build Include="Procedures\Film\GetFilm.sql" />
+    <Build Include="Procedures\Film\UpdateFilm.sql" />
+    <Build Include="Procedures\Language\AddLanguage.sql" />
+    <Build Include="Procedures\Language\DeleteLanguage.sql" />
+    <Build Include="Procedures\Language\GetAllLanguage.sql" />
+    <Build Include="Procedures\Language\GetLanguage.sql" />
+    <Build Include="Procedures\Language\UpdateLanguage.sql" />
+    <Build Include="Procedures\Rating\AddRating.sql" />
+    <Build Include="Procedures\Rating\DeleteRating.sql" />
+    <Build Include="Procedures\Rating\GetAllRating.sql" />
+    <Build Include="Procedures\Rating\GetRating.sql" />
+    <Build Include="Procedures\Rating\UpdateRating.sql" />
+    <Build Include="Procedures\Rental\AddRental.sql" />
+    <Build Include="Procedures\Rental\DeleteRental.sql" />
+    <Build Include="Procedures\Rental\GetAllRental.sql" />
+    <Build Include="Procedures\Rental\GetRental.sql" />
+    <Build Include="Procedures\Rental\UpdateRental.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

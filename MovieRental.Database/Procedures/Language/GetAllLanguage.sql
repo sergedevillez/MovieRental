@@ -1,6 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[GetAllCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[GetAllLanguage]
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Select LanguageId, [Name] from [Language]
+end

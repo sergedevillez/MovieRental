@@ -1,6 +1,9 @@
-﻿CREATE PROCEDURE [dbo].[GetCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[GetRentalDetail]
+	@RentalId int,
+	@FilmId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	SELECT RentalId, FilmId, RentalPrice from RentalDetail
+	Where RentalId = @RentalId and
+	FilmId = @FilmId
+end

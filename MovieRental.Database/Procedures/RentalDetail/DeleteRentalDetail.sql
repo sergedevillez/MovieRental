@@ -1,6 +1,9 @@
-﻿CREATE PROCEDURE [dbo].[DeleteCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[DeleteRentalDetail]
+	@RentalId int,
+	@FilmId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Delete from RentalDetail 
+	Where RentalId = @RentalId and
+	FilmId = @FilmId
+end

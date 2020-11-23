@@ -1,6 +1,7 @@
-﻿CREATE PROCEDURE [dbo].[DeleteCustomer]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE [dbo].[DeleteLanguage]
+	@LanguageId int
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	Delete from [Language]
+	where LanguageId = @LanguageId
+end
