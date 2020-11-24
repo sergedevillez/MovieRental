@@ -105,5 +105,40 @@ namespace MovieRental.DAL.Services
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }
+
+        //Get film by Category
+        public IEnumerable<Film> GetFilmByCategory(int categoryId)
+        {
+            Command cmd = new Command("GetFilmByCategory", true);
+            cmd.AddParameter("CategoryId", categoryId);
+            return Connection.ExecuteReader(cmd, Convert);
+        }
+
+        //Get film by Actor
+        public IEnumerable<Film> GetFilmByActor(int actorId)
+        {
+            Command cmd = new Command("GetFilmByCategory", true);
+            cmd.AddParameter("ActorId", actorId);
+            return Connection.ExecuteReader(cmd, Convert);
+        }
+
+        //Get film by Language
+        public IEnumerable<Film> GetFilmByLanguage(int languageId)
+        {
+            Command cmd = new Command("GetFilmByLanguage", true);
+            cmd.AddParameter("LanguageId", languageId);
+            return Connection.ExecuteReader(cmd, Convert);
+        }
+        
+        //Get film by Keyword
+        public IEnumerable<Film> GetFilmByKeyword(string keyword)
+        {
+            Command cmd = new Command("GetFilmByKeyword", true);
+            cmd.AddParameter("Keyword", keyword);
+            return Connection.ExecuteReader(cmd, Convert);
+        }
+
+
+
     }
 }

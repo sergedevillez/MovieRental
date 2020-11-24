@@ -64,5 +64,24 @@ namespace MovieRental.API.Controllers
                 return BadRequest("Delete NOT done.");
             }
         }
+
+        //Add film to Actor
+        [Route("Add")]
+        [HttpPost]
+        public IActionResult PostFilmToActor([FromBody] int actorId, int filmId)
+        {
+            _service.AddFilmToActor(actorId,filmId);
+            return Ok("Added film to actor done.");
+        }
+
+        //Get Actor Initials
+        [Route("/Initials")]
+        [HttpPost]
+        public IActionResult GetActorIni()
+        {
+            _service.GetAllInitials();
+            return Ok("Get all initials done.");
+        }
+
     }
 }

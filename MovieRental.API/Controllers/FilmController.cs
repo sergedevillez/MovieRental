@@ -65,5 +65,37 @@ namespace MovieRental.API.Controllers
                 return BadRequest("Delete NOT done.");
             }
         }
+
+        //Get film by Category
+        [Route("/Category")]
+        [HttpGet]
+        public IActionResult GetByCategory([FromBody] int id)
+        {
+            return Ok(_service.GetFilmByCategory(id));
+        }
+
+        //Get film by Actor
+        [Route("/Actor")]
+        [HttpGet]
+        public IActionResult GetByActor([FromBody] int id)
+        {
+            return Ok(_service.GetFilmByActor(id));
+        }
+
+        //Get films by Language
+        [Route("/Language")]
+        [HttpGet]
+        public IActionResult GetByLanguage([FromBody]int id)
+        {
+            return Ok(_service.GetFilmByLanguage(id));
+        }
+
+        //Get film by Keyword
+        [Route("/Keyword")]
+        [HttpGet]
+        public IActionResult GetByKeyword([FromBody] string keyword)
+        {
+            return Ok(_service.GetFilmByKeyword(keyword));
+        }
     }
 }

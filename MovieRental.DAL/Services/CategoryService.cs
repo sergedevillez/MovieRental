@@ -32,8 +32,8 @@ namespace MovieRental.DAL.Services
 
         public override Category Get(int key)
         {
-            Command cmd = new Command("GetCatgory", true);
-            cmd.AddParameter("VategoryId", key);
+            Command cmd = new Command("GetCategory", true);
+            cmd.AddParameter("CategoryId", key);
 
             return Connection.ExecuteReader(cmd, Convert).SingleOrDefault();
         }

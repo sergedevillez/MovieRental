@@ -17,7 +17,7 @@ namespace MovieRental.DAL.Services
                 reader["FirstName"].ToString(),
                 reader["LastName"].ToString(),
                 reader["Email"].ToString(),
-                reader["Passwd"].ToString()//TODO : Take off the passw because it cannot leave the database.
+                (byte[])reader["Passwd"]//TODO : Take off the passw because it cannot leave the database.
             );
         }
 

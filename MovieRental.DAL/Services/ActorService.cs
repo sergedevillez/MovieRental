@@ -19,6 +19,11 @@ namespace MovieRental.DAL.Services
             );
         }
 
+        private string ConvertString(SqlDataReader reader)
+        {
+            return reader.ToString();
+        }
+
         public ActorService(Connection connection)
             : base(connection) { }
 
@@ -72,6 +77,13 @@ namespace MovieRental.DAL.Services
             cmd.AddParameter("FilmId", keyFilm);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
+        }
+
+        //Get ALL actor initials
+        public IEnumerable<string> GetAllInitials()
+        {
+            Command cmd = new Command("GetActorInitiales", true);
+            return Connection.ExecuteReader(cmd, ConvertString);
         }
     }
 }

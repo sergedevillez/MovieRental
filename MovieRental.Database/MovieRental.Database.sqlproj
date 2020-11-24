@@ -69,6 +69,8 @@
     <Folder Include="Procedures\Language" />
     <Folder Include="Procedures\Rating" />
     <Folder Include="Procedures\Rental" />
+    <Folder Include="Procedures\Actor\Special" />
+    <Folder Include="Procedures\Film\Special" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Film.sql" />
@@ -92,7 +94,6 @@
     <Build Include="Procedures\RentalDetail\GetRentalDetail.sql" />
     <Build Include="Procedures\RentalDetail\UpdateRentalDetail.sql" />
     <Build Include="Procedures\Actor\AddActor.sql" />
-    <Build Include="Procedures\Actor\AddFilmToActor.sql" />
     <Build Include="Procedures\Actor\DeleteActor.sql" />
     <Build Include="Procedures\Actor\GetActor.sql" />
     <Build Include="Procedures\Actor\GetAllActor.sql" />
@@ -106,9 +107,6 @@
     <Build Include="Procedures\Customer\DeleteCustomer.sql" />
     <Build Include="Procedures\Customer\GetAllCustomer.sql" />
     <Build Include="Procedures\Customer\GetCustomer.sql" />
-    <Build Include="Procedures\Customer\UpdateCurstomer.sql" />
-    <Build Include="Procedures\Film\AddActorToFilm.sql" />
-    <Build Include="Procedures\Film\AddCategoryToFilm.sql" />
     <Build Include="Procedures\Film\AddFilm.sql" />
     <Build Include="Procedures\Film\DeleteFilm.sql" />
     <Build Include="Procedures\Film\GetAllFilm.sql" />
@@ -129,6 +127,15 @@
     <Build Include="Procedures\Rental\GetAllRental.sql" />
     <Build Include="Procedures\Rental\GetRental.sql" />
     <Build Include="Procedures\Rental\UpdateRental.sql" />
+    <Build Include="Procedures\Actor\Special\AddFilmToActor.sql" />
+    <Build Include="Procedures\Actor\Special\GetActorInitiales.sql" />
+    <Build Include="Procedures\Film\Special\AddActorToFilm.sql" />
+    <Build Include="Procedures\Film\Special\AddCategoryToFilm.sql" />
+    <Build Include="Procedures\Film\Special\GetFilmAllActor.sql" />
+    <Build Include="Procedures\Film\Special\GetFilmByCategory.sql" />
+    <Build Include="Procedures\Film\Special\GetFilmByActor.sql" />
+    <Build Include="Procedures\Film\Special\GetFilmByLanguage.sql" />
+    <Build Include="Procedures\Film\Special\GetFilmByKeyword.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />
