@@ -79,16 +79,7 @@ namespace MovieRental.DAL.Services
             return Connection.ExecuteReader<Customer>(cmd, Convert).FirstOrDefault();
         }
         
-        //Register
-        public Customer Register(Customer customer)
-        {
-            Command cmd = new Command("MVSP_RegisterCustomer", true);
-            cmd.AddParameter("Email", customer.email);
-            cmd.AddParameter("FirstName", customer.firstName);
-            cmd.AddParameter("LastName", customer.lastName);
-            cmd.AddParameter("Passwd", customer.passwd);
-            return Connection.ExecuteReader<Customer>(cmd, Convert).FirstOrDefault();
-        }
+
 
     }
 }
