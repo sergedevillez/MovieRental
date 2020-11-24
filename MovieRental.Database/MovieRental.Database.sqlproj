@@ -71,6 +71,7 @@
     <Folder Include="Procedures\Rental" />
     <Folder Include="Procedures\Actor\Special" />
     <Folder Include="Procedures\Film\Special" />
+    <Folder Include="Procedures\Auth" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Film.sql" />
@@ -85,8 +86,6 @@
     <Build Include="Tables\RentalDetail.sql" />
     <Build Include="Functions\MVSF_GetPostHash.sql" />
     <Build Include="Functions\MVSF_GetPreHash.sql" />
-    <Build Include="Procedures\MVSP_CheckCustomer.sql" />
-    <Build Include="Procedures\MVSP_RegisterCustomer.sql" />
     <Build Include="Views\V_Film.sql" />
     <Build Include="Procedures\RentalDetail\AddRentalDetail.sql" />
     <Build Include="Procedures\RentalDetail\DeleteRentalDetail.sql" />
@@ -136,6 +135,9 @@
     <Build Include="Procedures\Film\Special\GetFilmByActor.sql" />
     <Build Include="Procedures\Film\Special\GetFilmByLanguage.sql" />
     <Build Include="Procedures\Film\Special\GetFilmByKeyword.sql" />
+    <Build Include="Procedures\Auth\MVSP_CheckCustomer.sql" />
+    <Build Include="Procedures\Auth\MVSP_RegisterCustomer.sql" />
+    <Build Include="Procedures\Actor\Special\GetActorByInitiale.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

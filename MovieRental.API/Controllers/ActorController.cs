@@ -79,8 +79,8 @@ namespace MovieRental.API.Controllers
         [HttpPost]
         public IActionResult GetActorIni()
         {
-            _service.GetAllInitials();
-            return Ok("Get all initials done.");
+            
+            return Ok(_service.GetAllInitials());
         }
 
     }

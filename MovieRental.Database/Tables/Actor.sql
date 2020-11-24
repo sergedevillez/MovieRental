@@ -6,4 +6,4 @@
 );
 GO
 
-CREATE INDEX [IX_Actor_LastName] ON [dbo].[actor] ([LastName])
+CREATE INDEX [IX_Actor_LastName] ON [dbo].[Actor] ([LastName])

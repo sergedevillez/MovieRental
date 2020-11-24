@@ -2,5 +2,5 @@
 	@ActorId int
 AS
 begin
-	SELECT ActorId, Firstname, LastName from Actor where ActorId = @ActorId
+	SELECT ActorId, FirstName, LastName from Actor where ActorId = @ActorId
 end

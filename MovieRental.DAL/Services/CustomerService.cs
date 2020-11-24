@@ -16,8 +16,7 @@ namespace MovieRental.DAL.Services
                 (int)reader["CustomerId"],
                 reader["FirstName"].ToString(),
                 reader["LastName"].ToString(),
-                reader["Email"].ToString(),
-                (byte[])reader["Passwd"]//TODO : Take off the passw because it cannot leave the database.
+                reader["Email"].ToString()
             );
         }
 
@@ -25,9 +24,10 @@ namespace MovieRental.DAL.Services
             : base(connection) { }
 
 
+        //= Register
         public override int Insert(Customer entity)
         {
-            Command cmd = new Command("AddCustomer", true);
+            Command cmd = new Command("MVSP_RegisterCustomer", true);
             cmd.AddParameter("FirstName", entity.firstName);
             cmd.AddParameter("LastName", entity.lastName);
             cmd.AddParameter("Email", entity.email);
@@ -57,7 +57,6 @@ namespace MovieRental.DAL.Services
             cmd.AddParameter("FirstName", entity.firstName);
             cmd.AddParameter("LastName", entity.lastName);
             cmd.AddParameter("Email", entity.email);
-            cmd.AddParameter("Passwd", entity.passwd); //TODO : Maybe create a special methode/service only for modifying the passwd.
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }
@@ -68,6 +67,27 @@ namespace MovieRental.DAL.Services
             cmd.AddParameter("CustomerId", key);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
+        }
+
+
+        //Login
+        public Customer Login(Customer customer)
+        {
+            Command cmd = new Command("MVSP_CheckCustomer", true);
+            cmd.AddParameter("Email", customer.email);
+            cmd.AddParameter("Passwd", customer.passwd);
+            return Connection.ExecuteReader<Customer>(cmd, Convert).FirstOrDefault();
+        }
+        
+        //Register
+        public Customer Register(Customer customer)
+        {
+            Command cmd = new Command("MVSP_RegisterCustomer", true);
+            cmd.AddParameter("Email", customer.email);
+            cmd.AddParameter("FirstName", customer.firstName);
+            cmd.AddParameter("LastName", customer.lastName);
+            cmd.AddParameter("Passwd", customer.passwd);
+            return Connection.ExecuteReader<Customer>(cmd, Convert).FirstOrDefault();
         }
 
     }

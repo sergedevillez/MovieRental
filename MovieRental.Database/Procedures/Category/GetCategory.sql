@@ -2,6 +2,6 @@
 	@CategoryId int
 AS
 begin
-	SELECT @CategoryId, Name from Category
+	SELECT @CategoryId, [Name] from Category
 	where CategoryId = @CategoryId
 end
