@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieRental.API.Models.Form
+namespace MovielRental.Models.Forms
 {
     public class RegisterForm
     {

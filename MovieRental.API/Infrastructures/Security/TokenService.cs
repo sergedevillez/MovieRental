@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieRental.API.Infrastructure.Security
+namespace MovielRental.Infrastructures.Security
 {
     public class TokenService : ITokenService
     {

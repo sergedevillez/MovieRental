@@ -24,8 +24,6 @@ namespace MovieRental.DAL.Services
             return reader.ToString();
         }
 
-        public ActorService(Connection connection)
-            : base(connection) { }
 
 
         public override int Insert(Actor entity)

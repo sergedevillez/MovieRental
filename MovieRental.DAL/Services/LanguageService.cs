@@ -18,8 +18,8 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        public LanguageService(Connection connection)
-            : base(connection) { }
+        //public LanguageService(Connection connection)
+        //    : base(connection) { }
 
 
         public override int Insert(Language entity)

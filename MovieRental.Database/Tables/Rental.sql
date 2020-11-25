@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Rental]
 (
-	[RentalId] INT NOT NULL, 
+	[RentalId] INT IDENTITY NOT NULL, 
 	[RentalDate] DATETIME2(0) NOT NULL
 		CONSTRAINT DF_Rental_RentalDate DEFAULT (SYSDATETIME()),
 	[CustomerId] INT NOT NULL,

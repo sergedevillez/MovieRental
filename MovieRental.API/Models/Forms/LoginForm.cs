@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieRental.API.Models.Form
+namespace MovielRental.Models.Forms
 {
     public class LoginForm
     {
@@ -15,5 +15,6 @@ namespace MovieRental.API.Models.Form
         [Required]
         [MaxLength(20)]
         public string Passwd { get; set; }
+
     }
 }

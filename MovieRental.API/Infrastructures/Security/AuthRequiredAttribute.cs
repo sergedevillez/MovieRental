@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using MovieRental.API.Models.Interface;
-using MovieRental.DAL.Models;
+using MovielRental.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MovieRental.DAL.Models;
 
-namespace MovieRental.API.Infrastructure.Security
+namespace MovielRental.Infrastructures.Security
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthRequiredAttribute : TypeFilterAttribute

@@ -18,9 +18,6 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        public CategoryService(Connection connection)
-            : base(connection) { }
-
 
         public override int Insert(Category entity)
         {

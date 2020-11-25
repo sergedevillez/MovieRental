@@ -10,7 +10,6 @@ namespace MovieRental.DAL.Models
         public DateTime rentalDate { get; set; }
         public int customerId { get; set; }
 
-        public Rental() { }
         public Rental(DateTime rentalDate, int customerId)
         {
             this.rentalDate = rentalDate;

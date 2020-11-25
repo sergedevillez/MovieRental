@@ -1,21 +1,43 @@
-﻿using System;
+﻿using ADOLibrary;
+using MovieRental.DAL.Services;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace MovieRental.DAL.Models
 {
-    public class RentalDetail
+    class RentalDetail : ServiceBase<int, Rental>
     {
-        public int customerId { get; set; }
-        public int filmId { get; set; }
-        public double rentalPrice { get; set; }
 
-        public RentalDetail() { }
-        public RentalDetail(int customerId, int filmId, double rentalPrice)
+
+        public override bool Delete(int key)
         {
-            this.customerId = customerId;
-            this.filmId = filmId;
-            this.rentalPrice = rentalPrice;
+            throw new NotImplementedException();
         }
+
+        public override IEnumerable<Rental> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Rental Get(int key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int Insert(Rental entity)
+        {
+            throw new NotImplementedException();
+
+        }
+
+        public override bool Update(Rental entity)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
     }
 }

@@ -26,10 +26,6 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        public FilmService(Connection connection)
-            : base(connection) { }
-
-
         public override int Insert(Film entity)
         {
             Command cmd = new Command("AddFilm", true);
@@ -137,8 +133,14 @@ namespace MovieRental.DAL.Services
             cmd.AddParameter("Keyword", keyword);
             return Connection.ExecuteReader(cmd, Convert);
         }
-
-
+        
+        //Get film by title
+        public IEnumerable<Film> GetFilmByTitle(string title)
+        {
+            Command cmd = new Command("GetFilmByTitle", true);
+            cmd.AddParameter("Title", title);
+            return Connection.ExecuteReader(cmd, Convert);
+        }
 
     }
 }

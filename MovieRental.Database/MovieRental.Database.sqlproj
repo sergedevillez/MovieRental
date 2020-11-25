@@ -72,6 +72,8 @@
     <Folder Include="Procedures\Actor\Special" />
     <Folder Include="Procedures\Film\Special" />
     <Folder Include="Procedures\Auth" />
+    <Folder Include="Procedures\Rental\Special" />
+    <Folder Include="Types" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Film.sql" />
@@ -121,11 +123,6 @@
     <Build Include="Procedures\Rating\GetAllRating.sql" />
     <Build Include="Procedures\Rating\GetRating.sql" />
     <Build Include="Procedures\Rating\UpdateRating.sql" />
-    <Build Include="Procedures\Rental\AddRental.sql" />
-    <Build Include="Procedures\Rental\DeleteRental.sql" />
-    <Build Include="Procedures\Rental\GetAllRental.sql" />
-    <Build Include="Procedures\Rental\GetRental.sql" />
-    <Build Include="Procedures\Rental\UpdateRental.sql" />
     <Build Include="Procedures\Actor\Special\AddFilmToActor.sql" />
     <Build Include="Procedures\Actor\Special\GetActorInitiales.sql" />
     <Build Include="Procedures\Film\Special\AddActorToFilm.sql" />
@@ -138,6 +135,9 @@
     <Build Include="Procedures\Auth\MVSP_CheckCustomer.sql" />
     <Build Include="Procedures\Auth\MVSP_RegisterCustomer.sql" />
     <Build Include="Procedures\Actor\Special\GetActorByInitiale.sql" />
+    <Build Include="Procedures\Rental\Special\CreateRental.sql" />
+    <Build Include="Procedures\Customer\UpdateCustomer.sql" />
+    <Build Include="Types\FilmIds.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

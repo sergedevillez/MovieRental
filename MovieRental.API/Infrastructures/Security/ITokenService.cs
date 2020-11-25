@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieRental.API.Infrastructure.Security
+namespace MovielRental.Infrastructures.Security
 {
     public interface ITokenService
     {

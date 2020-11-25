@@ -2,6 +2,7 @@
 using MovieRental.DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,23 @@ namespace MovieRental.DAL.Services
 {
     public class RentalService : ServiceBase<int, Rental>
     {
+
+        public int Insertion(Rental entity, int[] films)
+        {
+            DataTable filma = new DataTable();
+            filma.Columns.Add(new DataColumn("Id", typeof(int)));
+
+            foreach (int t in films)
+            {
+                filma.Rows.Add(t);
+            }
+            Command cmd = new Command("CreateRental", true);
+            cmd.AddParameter("CustomerId", entity.customerId);
+            cmd.AddParameter("FilmIds", filma);
+            return Connection.ExecuteNonQuery(cmd);
+        }
+
+
         private Rental Convert(SqlDataReader reader)
         {
             return new Rental(
@@ -19,8 +37,8 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        public RentalService(Connection connection)
-            : base(connection) { }
+        //public RentalService(Connection connection)
+        //    : base(connection) { }
 
 
         public override int Insert(Rental entity)

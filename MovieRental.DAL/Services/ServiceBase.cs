@@ -12,9 +12,8 @@ namespace MovieRental.DAL.Services
         //Crud basic abstract + connection.
 
         protected Connection Connection { get; private set; }
-        public ServiceBase(Connection connection)
+        public ServiceBase()
         {
-            //this.Connection = connection;
             this.Connection = new Connection(@"Data Source=DESKTOP-PJ4VH9N;Initial Catalog=MovieRental;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         }

@@ -18,8 +18,8 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        public RatingService(Connection connection)
-            : base(connection) { }
+        //public RatingService(Connection connection)
+        //    : base(connection) { }
 
 
         public override int Insert(Rating entity)
