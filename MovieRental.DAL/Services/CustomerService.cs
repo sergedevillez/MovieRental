@@ -20,8 +20,7 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        //public CustomerService(Connection connection)
-        //    : base(connection) { }
+        public CustomerService(){ }
 
 
         //= Register

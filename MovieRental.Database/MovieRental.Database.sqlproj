@@ -61,7 +61,6 @@
     <Folder Include="Functions" />
     <Folder Include="Procedures" />
     <Folder Include="Views" />
-    <Folder Include="Procedures\RentalDetail" />
     <Folder Include="Procedures\Actor" />
     <Folder Include="Procedures\Category" />
     <Folder Include="Procedures\Customer" />
@@ -72,7 +71,6 @@
     <Folder Include="Procedures\Actor\Special" />
     <Folder Include="Procedures\Film\Special" />
     <Folder Include="Procedures\Auth" />
-    <Folder Include="Procedures\Rental\Special" />
     <Folder Include="Types" />
   </ItemGroup>
   <ItemGroup>
@@ -89,11 +87,6 @@
     <Build Include="Functions\MVSF_GetPostHash.sql" />
     <Build Include="Functions\MVSF_GetPreHash.sql" />
     <Build Include="Views\V_Film.sql" />
-    <Build Include="Procedures\RentalDetail\AddRentalDetail.sql" />
-    <Build Include="Procedures\RentalDetail\DeleteRentalDetail.sql" />
-    <Build Include="Procedures\RentalDetail\GetAllRentalDetail.sql" />
-    <Build Include="Procedures\RentalDetail\GetRentalDetail.sql" />
-    <Build Include="Procedures\RentalDetail\UpdateRentalDetail.sql" />
     <Build Include="Procedures\Actor\AddActor.sql" />
     <Build Include="Procedures\Actor\DeleteActor.sql" />
     <Build Include="Procedures\Actor\GetActor.sql" />
@@ -135,9 +128,9 @@
     <Build Include="Procedures\Auth\MVSP_CheckCustomer.sql" />
     <Build Include="Procedures\Auth\MVSP_RegisterCustomer.sql" />
     <Build Include="Procedures\Actor\Special\GetActorByInitiale.sql" />
-    <Build Include="Procedures\Rental\Special\CreateRental.sql" />
     <Build Include="Procedures\Customer\UpdateCustomer.sql" />
     <Build Include="Types\FilmIds.sql" />
+    <Build Include="Procedures\Rental\CreateRental.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MovieRental.Database.publish.xml" />

@@ -22,7 +22,7 @@ namespace MovieRental.DAL.Services
                 filma.Rows.Add(t);
             }
             Command cmd = new Command("CreateRental", true);
-            cmd.AddParameter("CustomerId", entity.customerId);
+            cmd.AddParameter("CustomerId", entity.CustomerId);
             cmd.AddParameter("FilmIds", filma);
             return Connection.ExecuteNonQuery(cmd);
         }
@@ -37,15 +37,12 @@ namespace MovieRental.DAL.Services
             );
         }
 
-        //public RentalService(Connection connection)
-        //    : base(connection) { }
-
 
         public override int Insert(Rental entity)
         {
             Command cmd = new Command("AddRental", true);
-            cmd.AddParameter("RentalDate", entity.rentalDate);
-            cmd.AddParameter("CustomerId", entity.customerId);
+            cmd.AddParameter("RentalDate", entity.RentalDate);
+            cmd.AddParameter("CustomerId", entity.CustomerId);
 
             return (int)Connection.ExecuteScalar(cmd);
         }
@@ -68,8 +65,8 @@ namespace MovieRental.DAL.Services
         {
             Command cmd = new Command("UpdateRental", true);
             cmd.AddParameter("RentalId", entity.id);
-            cmd.AddParameter("RentalDate", entity.rentalDate);
-            cmd.AddParameter("CustomerId", entity.customerId);
+            cmd.AddParameter("RentalDate", entity.RentalDate);
+            cmd.AddParameter("CustomerId", entity.CustomerId);
 
             return Connection.ExecuteNonQuery(cmd) == 1;
         }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MovieRental.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    
     public class RentalController : ControllerBase
     {
         private RentalService _services;
@@ -21,9 +21,10 @@ namespace MovieRental.API.Controllers
 
         [HttpPost]
         [Route("Location")]
-        public IActionResult Insert(Rental rent, int[] filmsId)
+        public IActionResult Pute(Rental rent, int[] fi)
         {
-            return Ok(_services.Insertion(rent, filmsId));
+
+            return Ok(_services.Insertion(rent, fi));
         }
     }
 }
